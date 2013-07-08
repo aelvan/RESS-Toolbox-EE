@@ -37,15 +37,15 @@ The calc function works as follows:
 
 Parameters:
 
-**size:** The maximum base size to be returned.
-**subtract:** Size to be subtracted from the maximum size (think margins).
-**retina:** Wether to take into account if the device has a high-dpi screen (yes/no).
+**size:** The maximum base size to be returned.  
+**subtract:** Size to be subtracted from the maximum size (think margins).  
+**retina:** Wether to take into account if the device has a high-dpi screen (yes/no).  
 
 So, the example above would return...
 
-On a non-retina laptop with, say 1440px screen width: 800-40 = 760.
-On a phone with a non-retina screen and a screensize of 320x480: 480-40 = 440.
-On a phone with retina screen (2/1 pixel density) and a screensize of 320x480: 480*2 - 40 = 920.
+On a non-retina laptop with, say 1440px screen width: 800-40 = 760.  
+On a phone with a non-retina screen and a screensize of 320x480: 480-40 = 440.  
+On a phone with retina screen (2/1 pixel density) and a screensize of 320x480: 480*2 - 40 = 920.  
 
 You can use this with for instance CE Image to optimize the size of generated images:
 
