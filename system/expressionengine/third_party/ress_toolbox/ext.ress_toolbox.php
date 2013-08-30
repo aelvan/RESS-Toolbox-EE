@@ -18,7 +18,7 @@ class Ress_toolbox_ext {
 	var $settings        = array();
 
 	var $name            = 'RESS Toolbox';
-	var $version         = '1.0';
+	var $version         = '1.1';
 	var $description     = '';
 	var $settings_exist  = 'y';
 	var $docs_url        = 'https://github.com/aelvan/RESS-Toolbox-EE';

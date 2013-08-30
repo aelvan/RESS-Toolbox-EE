@@ -40,6 +40,9 @@ Parameters:
 **size:** The maximum base size to be returned.  
 **subtract:** Size to be subtracted from the maximum size (think margins).  
 **retina:** Wether to take into account if the device has a high-dpi screen (yes/no).  
+**steps:** The minimum step between image sizes. If this is set to 0 (default), a new image will be generated for 
+each single screensize that visits your page. By setting this to for instance 200, sizes will be rounded up tp the 
+nearest 200px step. 
 
 So, the example above would return...
 
@@ -47,7 +50,18 @@ On a non-retina laptop with, say 1440px screen width: 800-40 = 760.
 On a phone with a non-retina screen and a screensize of 320x480: 480-40 = 440.  
 On a phone with retina screen (2/1 pixel density) and a screensize of 320x480: 480*2 - 40 = 920.  
 
-You can use this with for instance CE Image to optimize the size of generated images:
+If you use the steps parameter like this:
+
+    {exp:ress_toolbox:calc size='800' subtract='40' retina='yes' steps='200'}
+
+The same example would return...
+
+On a non-retina laptop with, say 1440px screen width: 800-40 = 800.  
+On a phone with a non-retina screen and a screensize of 320x480: 480-40 = 600.  
+On a phone with retina screen (2/1 pixel density) and a screensize of 320x480: 480*2 - 40 = 1000.  
+
+
+You can use the calc method with for instance CE Image to optimize the size of generated images:
 
 		{exp:ce_img:pair src="/images/lorem.jpg" width="{exp:ress_toolbox:calc size='800'}" parse="inward"}
 			<img src="{made}" />
@@ -76,6 +90,9 @@ have to write a blog post about it some time.
 
 Changelog
 ---
+### Version 1.1
+ - Added steps parameter.
+ 
 ### Version 1.0
  - Initial Public Release
 

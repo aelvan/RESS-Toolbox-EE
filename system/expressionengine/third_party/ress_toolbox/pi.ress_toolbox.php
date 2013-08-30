@@ -15,7 +15,7 @@
 
 $plugin_info = array(
   'pi_name' => 'RESS Toolbox',
-  'pi_version' => '1.0',
+  'pi_version' => '1.1',
   'pi_author' => 'André Elvan',
   'pi_author_url' => 'http://www.andreelvan.net',
   'pi_description' => '',
@@ -56,6 +56,7 @@ class Ress_toolbox {
 		$in_size = $this->EE->TMPL->fetch_param('size', '960');
 		$subtract = $this->EE->TMPL->fetch_param('subtract', '0');
 		$retina = $this->EE->TMPL->fetch_param('retina', 'no');
+		$steps = $this->EE->TMPL->fetch_param('steps', '0');
 
 		$settings_query = $this->EE->db->select('settings')->where('class', 'Ress_toolbox_ext')->limit(1)->get('extensions');
 		$settings = ($settings_query->num_rows() > 0) ? @unserialize($settings_query->row()->settings) : array() ; 
@@ -70,6 +71,10 @@ class Ress_toolbox {
 		if ($retina=='yes') {
 			$out_size = $out_size*(float)$density;
 		}
+    
+    if ($steps!=0) {
+      $out_size = ceil($out_size/$steps)*$steps;
+    }
 
 		return $out_size;
 	}
