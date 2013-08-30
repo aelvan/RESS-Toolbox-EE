@@ -56,9 +56,9 @@ If you use the steps parameter like this:
 
 The same example would return...
 
-On a non-retina laptop with, say 1440px screen width: 800-40 = 800.  
-On a phone with a non-retina screen and a screensize of 320x480: 480-40 = 600.  
-On a phone with retina screen (2/1 pixel density) and a screensize of 320x480: 480*2 - 40 = 1000.  
+On a non-retina laptop with, say 1440px screen width: 800.  
+On a phone with a non-retina screen and a screensize of 320x480: 600.  
+On a phone with retina screen (2/1 pixel density) and a screensize of 320x480: 1000.  
 
 
 You can use the calc method with for instance CE Image to optimize the size of generated images:
